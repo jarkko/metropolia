@@ -1,0 +1,2 @@
+Programming Ruby, 28973461789, by Dave Thomas, Andy Hunt
+Pragmatic Programmer, 87969876, by Dave Thomas, Andy Hunt
