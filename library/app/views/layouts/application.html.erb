@@ -3,10 +3,29 @@
   <title>
     <%= @page_title || "Library" %>
   </title>
+  
+  <style type="text/css">
+    label {
+      display: block;
+    }
+    .fieldWithErrors {
+      border: 3px solid #f00;
+    }
+    .notice {
+      padding: 1em;
+      background: green;
+      color: #fff;
+    }
+  </style>
 </head>
 
-
 <body>
+  
+  <% if flash[:notice] %>
+  <div id="flash" class="notice">
+    <%= flash[:notice] %>
+  </div>
+  <% end %>
   
   <%= yield %>
   

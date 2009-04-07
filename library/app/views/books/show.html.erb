@@ -1,0 +1,20 @@
+<h1>
+  <%= @book.title %>
+</h1>
+
+<dl>
+  <dt>ISBN</dt>
+  <dd>
+    <%= @book.isbn %>
+  </dd>
+  
+  <dt>
+    Authors
+  </dt>
+    <% @book.authors.each do |author| %>
+    <dd>
+      <%= author.name %>
+    </dd>
+    
+    <% end %>
+</dl>

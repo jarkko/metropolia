@@ -1,7 +1,5 @@
-<ul>
-  <% @books.each do |book| %>
-  <li>
-    <%= book.title %>    
-  </li>
-  <% end %>
+<ul>  
+  <%= render :partial => @books %>
 </ul>
+
+<%= link_to "Add new book", new_book_path %>

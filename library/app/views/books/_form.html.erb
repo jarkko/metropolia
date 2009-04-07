@@ -1,0 +1,13 @@
+<%= error_messages_for :book %>
+
+<% form_for(@book) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  
+  <%= f.label :isbn %>
+  <%= f.text_field :isbn %>
+  
+  <p>
+    <%= f.submit "Create book" %>
+  </p>
+<% end %>

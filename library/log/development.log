@@ -403,3 +403,508 @@ ActionView::MissingTemplate (Missing template books/show.erb in view path app/vi
   
 
 Rendering rescues/layout (internal_server_error)
+  [4;35;1mBook Exists (0.1ms)[0m   [0mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '98698769876' AND "books".id <> 1) LIMIT 1[0m
+  [4;36;1mBook Update (0.6ms)[0m   [0;1mUPDATE "books" SET "isbn" = '98698769876', "updated_at" = '2009-04-07 10:17:17' WHERE "id" = 1[0m
+  [4;35;1mBook Exists (0.2ms)[0m   [0mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '98698769876' AND "books".id <> 1) LIMIT 1[0m
+  [4;36;1mBook Update (0.6ms)[0m   [0;1mUPDATE "books" SET "title" = 'foo', "updated_at" = '2009-04-07 10:17:48' WHERE "id" = 1[0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."isbn" = '98698769876') [0m
+  [4;36;1mBook Exists (0.2ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '98698769876' AND "books".id <> 1) LIMIT 1[0m
+  [4;35;1mBook Update (0.4ms)[0m   [0mUPDATE "books" SET "title" = 'Programming Ruby)
+', "updated_at" = '2009-04-07 10:19:11' WHERE "id" = 1[0m
+  [4;36;1mBook Exists (0.2ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '98698769876' AND "books".id <> 1) LIMIT 1[0m
+  [4;35;1mBook Update (0.4ms)[0m   [0mUPDATE "books" SET "title" = 'Programming Ruby', "updated_at" = '2009-04-07 10:19:15' WHERE "id" = 1[0m
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 13:33:07) [GET]
+  [4;36;1mBook Load (0.6ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 13:33:49) [GET]
+  [4;35;1mBook Load (0.6ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 13:34:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+
+ActionView::MissingTemplate (Missing template books/show.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 13:34:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering books/show
+Completed in 30ms (View: 24, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 13:35:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering books/show
+Completed in 17ms (View: 4, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 13:36:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthor Load (0.5ms)[0m   [0;1mSELECT * FROM "authors" INNER JOIN "authors_books" ON "authors".id = "authors_books".author_id WHERE ("authors_books".book_id = 1 ) [0m
+
+ActionView::TemplateError (undefined method `name' for #<Author:0x21e90e0>) on line #16 of app/views/books/show.html.erb:
+13:   </dt>
+14:     <% @book.authors.each do |author| %>
+15:     <dd>
+16:       <%= author.name %>
+17:     </dd>
+18:     
+19:     <% end %>
+
+    app/views/books/show.html.erb:16
+    app/views/books/show.html.erb:14
+
+Rendered rescues/_trace (42.5ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 13:36:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.7ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthor Load (0.8ms)[0m   [0;1mSELECT * FROM "authors" INNER JOIN "authors_books" ON "authors".id = "authors_books".author_id WHERE ("authors_books".book_id = 1 ) [0m
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 13:38:42) [GET]
+  [4;35;1mBook Load (0.6ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 13:39:23) [GET]
+
+ActionView::MissingTemplate (Missing template books/new.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 13:39:34) [GET]
+  [4;36;1mBook Load (0.6ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 13:39:54) [GET]
+  [4;35;1mBook Load (0.8ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 75ms (View: 7, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 13:40:05) [GET]
+
+ActionView::MissingTemplate (Missing template books/new.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 13:40:58) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Completed in 95ms (View: 94, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 13:42:07) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 13:42:44) [GET]
+  [4;36;1mBook Load (0.6ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 13:44:18) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 13:44:48) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 13:45:22) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 13:46:06) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 13:46:15) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"", "title"=>""}}
+
+ActionView::MissingTemplate (Missing template books/create.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 13:48:09) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"", "title"=>""}}
+
+ActionView::MissingTemplate (Missing template books/create.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 13:48:46) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"87658765", "title"=>"Title"}}
+
+ActionView::MissingTemplate (Missing template books/create.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 13:50:18) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"87658765", "title"=>"Title"}}
+  [4;35;1mBook Exists (0.3ms)[0m   [0mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '87658765') LIMIT 1[0m
+  [4;36;1mBook Create (1.7ms)[0m   [0;1mINSERT INTO "books" ("isbn", "updated_at", "title", "created_at") VALUES('87658765', '2009-04-07 10:50:18', 'Title', '2009-04-07 10:50:18')[0m
+Redirected to http://localhost:3100/books
+Completed in 56ms (DB: 2) | 302 Found [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 13:50:19) [GET]
+  [4;35;1mBook Load (0.7ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 13:50:24) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" INNER JOIN "authors_books" ON "authors".id = "authors_books".author_id WHERE ("authors_books".book_id = 3 ) [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/books/3]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 13:50:28) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 13:50:36) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"76547654", "title"=>""}}
+  [4;36;1mBook Exists (0.2ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '76547654') LIMIT 1[0m
+Redirected to http://localhost:3100/books
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 13:50:36) [GET]
+  [4;35;1mBook Load (0.7ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 13:50:42) [GET]
+  [4;36;1mBook Load (0.7ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 13:51:37) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"76547654", "title"=>""}}
+  [4;35;1mBook Exists (0.3ms)[0m   [0mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '76547654') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering books/new
+Completed in 16ms (View: 3, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 13:51:46) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"76547654", "title"=>""}}
+  [4;36;1mBook Exists (0.2ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '76547654') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering books/new
+Completed in 12ms (View: 2, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 13:52:20) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"76547654", "title"=>""}}
+  [4;35;1mBook Exists (0.2ms)[0m   [0mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '76547654') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering books/new
+
+ActionView::TemplateError (`@#<Book:0x227e6cc>' is not allowed as an instance variable name) on line #1 of app/views/books/new.html.erb:
+1: <%= error_messages_for @book %>
+2: 
+3: <% form_for(@book) do |f| %>
+4:   <%= f.label :title %>
+
+    app/views/books/new.html.erb:1
+    app/controllers/books_controller.rb:22:in `create'
+
+Rendered rescues/_trace (112.1ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 13:52:30) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"76547654", "title"=>""}}
+  [4;36;1mBook Exists (0.2ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '76547654') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering books/new
+Completed in 48ms (View: 9, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 13:52:37) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 13:52:45) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"23542345", "title"=>""}}
+  [4;35;1mBook Exists (0.5ms)[0m   [0mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '23542345') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering books/new
+Completed in 12ms (View: 2, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 13:53:44) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"23542345", "title"=>""}}
+  [4;36;1mBook Exists (0.2ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '23542345') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering books/new
+Completed in 29ms (View: 7, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 13:53:55) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"23542345", "title"=>""}}
+  [4;35;1mBook Exists (0.2ms)[0m   [0mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '23542345') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering books/new
+Completed in 57ms (View: 9, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 13:54:13) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"23542345", "title"=>""}}
+  [4;36;1mBook Exists (0.2ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '23542345') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering books/new
+Completed in 49ms (View: 16, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 13:54:52) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"23542345", "title"=>"Test"}}
+  [4;35;1mBook Exists (0.1ms)[0m   [0mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '23542345') LIMIT 1[0m
+  [4;36;1mBook Create (0.4ms)[0m   [0;1mINSERT INTO "books" ("isbn", "updated_at", "title", "created_at") VALUES('23542345', '2009-04-07 10:54:52', 'Test', '2009-04-07 10:54:52')[0m
+Redirected to http://localhost:3100/books
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 13:54:52) [GET]
+  [4;35;1mBook Load (0.8ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 80ms (View: 4, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 13:57:48) [GET]
+  [4;36;1mBook Load (0.8ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 13:57:51) [GET]
+  [4;35;1mBook Load (0.8ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 13:57:54) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 13:57:58) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"879598756", "title"=>"Another book"}}
+  [4;36;1mBook Exists (0.1ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '879598756') LIMIT 1[0m
+  [4;35;1mBook Create (0.4ms)[0m   [0mINSERT INTO "books" ("isbn", "updated_at", "title", "created_at") VALUES('879598756', '2009-04-07 10:57:58', 'Another book', '2009-04-07 10:57:58')[0m
+Redirected to http://localhost:3100/books
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 13:57:58) [GET]
+  [4;36;1mBook Load (0.8ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 13:58:33) [GET]
+  [4;35;1mBook Load (0.9ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 13:58:37) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 13:58:50) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"7657654", "title"=>"Just another book"}}
+  [4;36;1mBook Exists (0.2ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '7657654') LIMIT 1[0m
+  [4;35;1mBook Create (0.9ms)[0m   [0mINSERT INTO "books" ("isbn", "updated_at", "title", "created_at") VALUES('7657654', '2009-04-07 10:58:50', 'Just another book', '2009-04-07 10:58:50')[0m
+Redirected to http://localhost:3100/books
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 13:58:50) [GET]
+  [4;36;1mBook Load (0.9ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 14:00:03) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 14:00:06) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"", "title"=>"kjhfjhg"}}
+  [4;35;1mBook Exists (0.2ms)[0m   [0mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering books/new
+Completed in 88ms (View: 2, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 14:00:15) [GET]
+  [4;36;1mBook Load (0.9ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 14:00:32) [GET]
+  [4;35;1mBook Load (0.9ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 14:01:09) [POST]
+  Parameters: {"commit"=>"Create book", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"", "title"=>"kjhfjhg"}}
+  [4;36;1mBook Exists (0.2ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering books/new
+Completed in 13ms (View: 2, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 14:01:13) [GET]
+  [4;35;1mBook Load (1.7ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 10ms (View: 4, DB: 2) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 14:04:07) [GET]
+  [4;36;1mBook Load (0.8ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (2.8ms)
+Rendered books/_book (0.3ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 14:04:46) [GET]
+  [4;35;1mBook Load (0.8ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (1.9ms)
+Rendered books/_book (0.4ms)
+Rendered books/_book (0.3ms)
+Rendered books/_book (0.3ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 14:05:21) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 14:05:25) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" INNER JOIN "authors_books" ON "authors".id = "authors_books".author_id WHERE ("authors_books".book_id = 6 ) [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/books/6]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 14:06:16) [GET]
+  [4;36;1mBook Load (0.9ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (2.1ms)
+Rendered books/_book (0.3ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 14:06:18) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Rendered books/_form (2.7ms)
+Completed in 78ms (View: 8, DB: 0) | 200 OK [http://localhost/books/new]
