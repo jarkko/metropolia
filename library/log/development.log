@@ -1,0 +1,405 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20090407065236)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "isbn" varchar(255), "authors" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090407065236')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("books")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20090407065236)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mDROP TABLE "books"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090407065236'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20090407065236)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "isbn" varchar(255), "authors" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090407065236')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("books")[0m
+  [4;36;1mBook Load (0.4ms)[0m   [0;1mSELECT * FROM "books" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."title" = 'Programming Ruby') LIMIT 1[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" [0m
+  [4;36;1mBook Load (1.1ms)[0m   [0;1mSELECT * FROM "books" ORDER BY title[0m
+  [4;35;1mBook Create (0.4ms)[0m   [0mINSERT INTO "books" ("isbn", "updated_at", "title", "authors", "created_at") VALUES('12397869876', '2009-04-07 07:10:16', 'Programming Rubby', 'Thomas, Hunt', '2009-04-07 07:10:16')[0m
+  [4;36;1mBook Load (0.8ms)[0m   [0;1mSELECT * FROM "books" ORDER BY title[0m
+  [4;35;1mBook Create (0.5ms)[0m   [0mINSERT INTO "books" ("isbn", "updated_at", "title", "authors", "created_at") VALUES('78657865', '2009-04-07 07:12:09', 'Agile Web Development with Rails', 'Thomas, Hansson et al', '2009-04-07 07:12:09')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "books" [0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 2) [0m
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" [0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" LIMIT 1[0m
+  [4;36;1mBook Load (0.8ms)[0m   [0;1mSELECT * FROM "books" ORDER BY title LIMIT 1[0m
+  [4;35;1mBook Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: isbntitle: SELECT * FROM "books" ORDER BY isbntitle LIMIT 1[0m
+  [4;36;1mBook Load (0.8ms)[0m   [0;1mSELECT * FROM "books" ORDER BY isbn, title LIMIT 1[0m
+  [4;35;1mBook Exists (0.2ms)[0m   [0mSELECT "books".id FROM "books" WHERE ("books"."isbn" IS NULL) LIMIT 1[0m
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+  [4;35;1mBook Exists (0.2ms)[0m   [0mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '12397869876') LIMIT 1[0m
+  [4;36;1mBook Exists (0.2ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '12397869876') LIMIT 1[0m
+  [4;35;1mBook Exists (0.2ms)[0m   [0mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '12397869876') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20090407065236)
+Migrating to CreateAuthors (20090407072420)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090407072420')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("authors")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("books")[0m
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+  [4;35;1mAuthor Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: authors.book_id: SELECT * FROM "authors" WHERE ("authors".book_id = 1) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAuthors (20090407072420)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDROP TABLE "authors"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090407072420'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("books")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20090407065236)
+Migrating to CreateAuthors (20090407072420)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "book_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090407072420')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("authors")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("books")[0m
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors".book_id = 1) [0m
+  [4;36;1mAuthor Create (0.7ms)[0m   [0;1mINSERT INTO "authors" ("updated_at", "first_name", "last_name", "book_id", "created_at") VALUES('2009-04-07 07:29:17', 'Dave', 'Thomas', NULL, '2009-04-07 07:29:17')[0m
+  [4;35;1mAuthor Update (0.4ms)[0m   [0mUPDATE "authors" SET "book_id" = 1, "updated_at" = '2009-04-07 07:29:46' WHERE "id" = 1[0m
+  [4;36;1mAuthor Create (0.5ms)[0m   [0;1mINSERT INTO "authors" ("updated_at", "first_name", "last_name", "book_id", "created_at") VALUES('2009-04-07 07:30:47', 'Andy', 'Hunt', 1, '2009-04-07 07:30:47')[0m
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" [0m
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors".book_id = 1) [0m
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20090407065236)
+Migrating to CreateAuthors (20090407072420)
+Migrating to CreateAuthorsBooks (20090407073521)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "authors_books" ("authors_id" integer, "books_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090407073521')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("authors")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("authors_books")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("books")[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mBook Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: authors_books.book_id: SELECT * FROM "books" INNER JOIN "authors_books" ON "books".id = "authors_books".book_id WHERE ("authors_books".author_id = 1 ) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAuthorsBooks (20090407073521)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDROP TABLE "authors_books"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090407073521'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("authors")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("books")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20090407065236)
+Migrating to CreateAuthors (20090407072420)
+Migrating to CreateAuthorsBooks (20090407073521)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "authors_books" ("author_id" integer, "book_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090407073521')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("authors")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("authors_books")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("books")[0m
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" INNER JOIN "authors_books" ON "books".id = "authors_books".book_id WHERE ("authors_books".author_id = 1 ) [0m
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO "authors_books" ("updated_at", "author_id", "created_at", "book_id") VALUES ('2009-04-07 07:10:16', 1, '2009-04-07 07:10:16', 1)[0m
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20090407065236)
+Migrating to CreateAuthors (20090407072420)
+Migrating to CreateAuthorsBooks (20090407073521)
+Migrating to RemoveAuthorsFromBooks (20090407081717)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TEMPORARY TABLE "altered_books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "isbn" varchar(255), "authors" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("books")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDROP TABLE "books"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "isbn" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_books")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_books"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090407081717')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("authors")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("authors_books")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("books")[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+  [4;36;1mBook Exists (0.2ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '12397869876' AND "books".id <> 1) LIMIT 1[0m
+  [4;35;1mBook Update (0.4ms)[0m   [0mUPDATE "books" SET "title" = 'Programming Ruby', "updated_at" = '2009-04-07 08:19:11' WHERE "id" = 1[0m
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" INNER JOIN "authors_books" ON "authors".id = "authors_books".author_id WHERE ("authors_books".book_id = 1 ) [0m
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 2) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO "authors_books" ("updated_at", "author_id", "created_at", "book_id") VALUES ('2009-04-07 07:30:47', 2, '2009-04-07 07:30:47', 1)[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-07 11:26:08) [GET]
+
+ActionController::RoutingError (No route matches "/books" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-07 11:26:15) [GET]
+
+ActionController::RoutingError (No route matches "/books/index" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-07 11:26:31) [GET]
+
+ActionController::RoutingError (No route matches "/books/index.html" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 11:27:22) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 11:28:39) [GET]
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 11:29:08) [GET]
+
+ActionView::MissingTemplate (Missing template books/index.erb in view path app/views):
+  app/controllers/books_controller.rb:4:in `index'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 11:29:49) [GET]
+Rendering books/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 11:30:01) [GET]
+Rendering books/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 11:30:16) [GET]
+Rendering books/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 11:31:17) [GET]
+  [4;36;1mBook Load (0.7ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering books/index
+Completed in 18ms (View: 1, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 11:33:05) [GET]
+  [4;35;1mBook Load (0.6ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering books/index
+Completed in 74ms (View: 68, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 11:42:12) [GET]
+  [4;36;1mBook Load (0.6ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 11:43:30) [GET]
+  [4;35;1mBook Load (0.6ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 11:43:58) [GET]
+  [4;36;1mBook Load (0.6ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 11:44:51) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to show. Actions: index):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 11:45:02) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionView::MissingTemplate (Missing template books/show.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 11:45:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+
+ActionView::MissingTemplate (Missing template books/show.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
