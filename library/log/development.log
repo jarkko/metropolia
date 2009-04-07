@@ -908,3 +908,796 @@ Rendering template within layouts/application
 Rendering books/new
 Rendered books/_form (2.7ms)
 Completed in 78ms (View: 8, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 14:59:28) [GET]
+  [4;35;1mBook Load (0.9ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (2.0ms)
+Rendered books/_book (0.3ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 14:59:30) [GET]
+  [4;36;1mBook Load (0.9ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (2.3ms)
+Rendered books/_book (0.4ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.4ms)
+Rendered books/_book (1.0ms)
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 14:59:31) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" INNER JOIN "authors_books" ON "authors".id = "authors_books".author_id WHERE ("authors_books".book_id = 5 ) [0m
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/books/5]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 15:00:10) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" INNER JOIN "authors_books" ON "authors".id = "authors_books".author_id WHERE ("authors_books".book_id = 3 ) [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/books/3]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 15:00:54) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" INNER JOIN "authors_books" ON "authors".id = "authors_books".author_id WHERE ("authors_books".book_id = 3 ) [0m
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/books/3]
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2009-04-07 15:00:56) [GET]
+  Parameters: {"id"=>"3"}
+
+ActionController::UnknownAction (No action responded to edit. Actions: create, index, new, and show):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2009-04-07 15:01:22) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 3) [0m
+
+ActionView::MissingTemplate (Missing template books/edit.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 15:03:43) [GET]
+  Parameters: {"id"=>"245"}
+  [4;36;1mBook Load (0.1ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 245) [0m
+Filter chain halted as [:fetch_book] rendered_or_redirected.
+Completed in 68ms (View: 1, DB: 0) | 404 Not Found [http://localhost/books/245]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 15:04:24) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" INNER JOIN "authors_books" ON "authors".id = "authors_books".author_id WHERE ("authors_books".book_id = 3 ) [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/books/3]
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2009-04-07 15:04:29) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 3) [0m
+
+ActionView::MissingTemplate (Missing template books/edit.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2009-04-07 15:04:46) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering books/edit
+Rendered books/_form (2.9ms)
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/books/3/edit]
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2009-04-07 15:05:10) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering books/edit
+Rendered books/_form (2.6ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/books/3/edit]
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2009-04-07 15:06:00) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering books/edit
+Rendered books/_form (2.9ms)
+Completed in 18ms (View: 11, DB: 0) | 200 OK [http://localhost/books/3/edit]
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2009-04-07 15:07:06) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering books/edit
+Rendered books/_form (3.3ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/books/3/edit]
+
+
+Processing BooksController#update (for 127.0.0.1 at 2009-04-07 15:07:10) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "id"=>"3", "book"=>{"isbn"=>"87658765", "title"=>"Title"}}
+
+ActionController::UnknownAction (No action responded to update. Actions: create, edit, index, new, and show):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#update (for 127.0.0.1 at 2009-04-07 15:09:24) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "id"=>"3", "book"=>{"isbn"=>"87658765", "title"=>"Title"}}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 3) [0m
+  [4;35;1mBook Exists (0.3ms)[0m   [0mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '87658765' AND "books".id <> 3) LIMIT 1[0m
+Redirected to http://localhost:3100/books/3
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/books/3]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 15:09:24) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" INNER JOIN "authors_books" ON "authors".id = "authors_books".author_id WHERE ("authors_books".book_id = 3 ) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/books/3]
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2009-04-07 15:09:30) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering books/edit
+Rendered books/_form (2.1ms)
+Completed in 12ms (View: 3, DB: 0) | 200 OK [http://localhost/books/3/edit]
+
+
+Processing BooksController#update (for 127.0.0.1 at 2009-04-07 15:09:37) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "id"=>"3", "book"=>{"isbn"=>"87658765", "title"=>"Pragmatic Programmer"}}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 3) [0m
+  [4;36;1mBook Exists (0.1ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '87658765' AND "books".id <> 3) LIMIT 1[0m
+  [4;35;1mBook Update (0.4ms)[0m   [0mUPDATE "books" SET "title" = 'Pragmatic Programmer', "updated_at" = '2009-04-07 12:09:37' WHERE "id" = 3[0m
+Redirected to http://localhost:3100/books/3
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/books/3]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 15:09:37) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" INNER JOIN "authors_books" ON "authors".id = "authors_books".author_id WHERE ("authors_books".book_id = 3 ) [0m
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/books/3]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-07 15:12:03) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 15:12:59) [GET]
+  [4;36;1mBook Load (2.1ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (2.0ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.7ms)
+Rendered books/_book (0.2ms)
+Completed in 13ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 15:13:04) [GET]
+  [4;35;1mBook Load (0.8ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (1.9ms)
+Rendered books/_book (0.3ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 15:13:06) [GET]
+  [4;36;1mBook Load (0.8ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (1.8ms)
+Rendered books/_book (0.3ms)
+Rendered books/_book (0.3ms)
+Rendered books/_book (0.3ms)
+Rendered books/_book (0.3ms)
+Rendered books/_book (0.2ms)
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+/!\ FAILSAFE /!\  Tue Apr 07 15:13:31 +0300 2009
+  Status: 500 Internal Server Error
+  wrong number of arguments (2 for 1)
+    /Users/jarkko/temp/metropolia/library/config/routes.rb:43:in `root'
+    /Users/jarkko/temp/metropolia/library/config/routes.rb:43
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:226:in `draw'
+    /Users/jarkko/temp/metropolia/library/config/routes.rb:1
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:145:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:145:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:145:in `load'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:286:in `load_routes!'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:286:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:286:in `load_routes!'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:266:in `load!'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:281:in `reload'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:59:in `reload_application'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:8:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-07 15:13:34) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 15:13:50) [GET]
+  [4;35;1mBook Load (0.9ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (2.1ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.3ms)
+Rendered books/_book (0.3ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 15:15:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;35;1mAuthor Load (0.5ms)[0m   [0mSELECT * FROM "authors" INNER JOIN "authors_books" ON "authors".id = "authors_books".author_id WHERE ("authors_books".book_id = 1 ) [0m
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/show_me_a_book/1]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 15:16:16) [GET]
+  [4;36;1mBook Load (0.9ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (2.8ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.1ms)
+Rendered books/_book (0.1ms)
+Rendered books/_book (0.1ms)
+Rendered books/_book (0.2ms)
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 15:17:08) [GET]
+  [4;35;1mBook Load (0.8ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (2.2ms)
+Rendered books/_book (1.0ms)
+Rendered books/_book (0.3ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Completed in 18ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 15:18:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;35;1mAuthor Load (0.5ms)[0m   [0mSELECT * FROM "authors" INNER JOIN "authors_books" ON "authors".id = "authors_books".author_id WHERE ("authors_books".book_id = 1 ) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 15:18:22) [GET]
+  [4;36;1mBook Load (0.8ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (63.8ms)
+Rendered books/_book (0.3ms)
+Rendered books/_book (0.4ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Completed in 74ms (View: 69, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 15:19:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthor Load (2.0ms)[0m   [0;1mSELECT * FROM "authors" INNER JOIN "authors_books" ON "authors".id = "authors_books".author_id WHERE ("authors_books".book_id = 1 ) [0m
+Completed in 24ms (View: 10, DB: 2) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#show to xml (for 127.0.0.1 at 2009-04-07 15:19:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+
+ActionView::MissingTemplate (Missing template books/show.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#show to xml (for 127.0.0.1 at 2009-04-07 15:20:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Completed in 139ms (View: 1, DB: 0) | 200 OK [http://localhost/books/1.xml]
+
+
+Processing BooksController#index to xml (for 127.0.0.1 at 2009-04-07 15:21:17) [GET]
+  [4;35;1mBook Load (0.9ms)[0m   [0mSELECT * FROM "books" [0m
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://localhost/books.xml]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2009-04-07 15:21:59) [GET]
+  [4;36;1mBook Load (0.9ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (1.8ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (0.2ms)
+Rendered books/_book (3.0ms)
+Rendered books/_book (0.4ms)
+Rendered books/_book (0.2ms)
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 15:22:09) [GET]
+Rendering template within layouts/application
+Rendering books/new
+ERROR: compiling _run_erb_app47views47books47new46html46erb RAISED compile error
+/Users/jarkko/temp/metropolia/library/app/views/books/new.html.erb:1: syntax error, unexpected ','
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat(( render :partial => "form", , :locals => {:submit_text => "Create"} ).to_s); @output_buffer
+                                                                                                                                                  ^
+Function body:           def _run_erb_app47views47books47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat(( render :partial => "form", , :locals => {:submit_text => "Create"} ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/jarkko/temp/metropolia/library/app/views/books/new.html.erb:4:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/jarkko/temp/metropolia/library/app/views/books/new.html.erb:1: syntax error, unexpected ','
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat(( render :partial => "form", , :locals => {:submit_text => "Create"} ).to_s); @output_buffer
+                                                                                                                                                  ^) on line #1 of app/views/books/new.html.erb:
+1: <%= render :partial => "form", , :locals => {:submit_text => "Create"} %>
+
+    app/views/books/new.html.erb:4:in `compile!'
+
+Rendered rescues/_trace (35.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2009-04-07 15:22:24) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Rendered books/_form (2.3ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2009-04-07 15:22:41) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "book"=>{"isbn"=>"", "title"=>""}}
+  [4;35;1mBook Exists (0.9ms)[0m   [0mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering books/new
+Rendered books/_form (1.5ms)
+Completed in 15ms (View: 4, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 15:25:56) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" INNER JOIN "authors_books" ON "authors".id = "authors_books".author_id WHERE ("authors_books".book_id = 6 ) [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/books/6]
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2009-04-07 15:26:00) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering books/edit
+Rendered books/_form (2.1ms)
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/books/6/edit]
+
+
+Processing BooksController#update (for 127.0.0.1 at 2009-04-07 15:26:34) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "id"=>"6", "book"=>{"isbn"=>"7657654", "title"=>"Just another book"}}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 6) [0m
+  [4;36;1mBook Exists (0.2ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" = '7657654' AND "books".id <> 6) LIMIT 1[0m
+Redirected to http://localhost:3100/books/6
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/books/6]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2009-04-07 15:26:34) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" INNER JOIN "authors_books" ON "authors".id = "authors_books".author_id WHERE ("authors_books".book_id = 6 ) [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/books/6]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2009-04-07 15:30:07) [GET]
+  [4;35;1mAuthor Load (0.6ms)[0m   [0mSELECT * FROM "authors" [0m
+Rendering template within layouts/authors
+Rendering authors/index
+Completed in 18ms (View: 12, DB: 1) | 200 OK [http://localhost/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2009-04-07 15:30:31) [GET]
+  [4;36;1mAuthor Load (0.6ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Rendering template within layouts/authors
+Rendering authors/index
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/authors]
+
+
+Processing AuthorsController#show (for 127.0.0.1 at 2009-04-07 15:30:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering template within layouts/authors
+Rendering authors/show
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/authors/1]
+
+
+Processing AuthorsController#show (for 127.0.0.1 at 2009-04-07 15:30:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering template within layouts/authors
+Rendering authors/show
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/authors/1]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2009-04-07 15:30:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering template within layouts/authors
+Rendering authors/edit
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/authors/1/edit]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2009-04-07 15:32:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering template within layouts/authors
+Rendering authors/edit
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/authors/1/edit]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2009-04-07 15:33:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering template within layouts/authors
+Rendering authors/edit
+Rendered authors/_form (3.2ms)
+Completed in 79ms (View: 73, DB: 0) | 200 OK [http://localhost/authors/1/edit]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2009-04-07 15:34:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering authors/edit
+Rendered authors/_form (2.4ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/authors/1/edit]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2009-04-07 15:34:21) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "author"=>{"first_name"=>"Dave", "last_name"=>""}, "id"=>"1"}
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mAuthor Update (0.5ms)[0m   [0;1mUPDATE "authors" SET "last_name" = '', "updated_at" = '2009-04-07 12:34:21' WHERE "id" = 1[0m
+Redirected to http://localhost:3100/authors/1
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/authors/1]
+
+
+Processing AuthorsController#show (for 127.0.0.1 at 2009-04-07 15:34:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering authors/show
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/authors/1]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2009-04-07 15:34:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering authors/edit
+Rendered authors/_form (3.2ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/authors/1/edit]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2009-04-07 15:34:28) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "author"=>{"first_name"=>"Dave", "last_name"=>"Thomas"}, "id"=>"1"}
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mAuthor Update (0.5ms)[0m   [0;1mUPDATE "authors" SET "last_name" = 'Thomas', "updated_at" = '2009-04-07 12:34:28' WHERE "id" = 1[0m
+Redirected to http://localhost:3100/authors/1
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/authors/1]
+
+
+Processing AuthorsController#show (for 127.0.0.1 at 2009-04-07 15:34:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering authors/show
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/authors/1]
+
+
+Processing AuthorsController#show (for 127.0.0.1 at 2009-04-07 15:34:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering authors/show
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/authors/1]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2009-04-07 15:34:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering authors/edit
+Rendered authors/_form (2.4ms)
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/authors/1/edit]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2009-04-07 15:34:54) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "author"=>{"first_name"=>"Dave", "last_name"=>""}, "id"=>"1"}
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering authors/edit
+Rendered authors/_form (1.7ms)
+Completed in 19ms (View: 7, DB: 0) | 200 OK [http://localhost/authors/1]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2009-04-07 15:34:57) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "author"=>{"first_name"=>"Dave", "last_name"=>"Thomas"}, "id"=>"1"}
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Redirected to http://localhost:3100/authors/1
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/authors/1]
+
+
+Processing AuthorsController#show (for 127.0.0.1 at 2009-04-07 15:34:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering authors/show
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/authors/1]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2009-04-07 15:34:59) [GET]
+  [4;35;1mAuthor Load (0.6ms)[0m   [0mSELECT * FROM "authors" [0m
+Rendering template within layouts/application
+Rendering authors/index
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/authors]
+
+
+Processing AuthorsController#show (for 127.0.0.1 at 2009-04-07 15:35:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering authors/show
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/authors/2]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2009-04-07 15:35:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering authors/edit
+Rendered authors/_form (2.3ms)
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/authors/2/edit]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2009-04-07 15:35:03) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "author"=>{"first_name"=>"Andy", "last_name"=>"Hunt"}, "id"=>"2"}
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 2) [0m
+Redirected to http://localhost:3100/authors/2
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/authors/2]
+
+
+Processing AuthorsController#show (for 127.0.0.1 at 2009-04-07 15:35:03) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering authors/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/authors/2]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2009-04-07 15:35:05) [GET]
+  [4;36;1mAuthor Load (0.6ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Rendering template within layouts/application
+Rendering authors/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/authors]
+
+
+Processing AuthorsController#new (for 127.0.0.1 at 2009-04-07 15:35:07) [GET]
+Rendering template within layouts/application
+Rendering authors/new
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/authors/new]
+
+
+Processing AuthorsController#new (for 127.0.0.1 at 2009-04-07 15:35:21) [GET]
+Rendering template within layouts/application
+Rendering authors/new
+Rendered authors/_form (2.6ms)
+Completed in 86ms (View: 7, DB: 0) | 200 OK [http://localhost/authors/new]
+
+
+Processing AuthorsController#new (for 127.0.0.1 at 2009-04-07 15:35:57) [GET]
+Rendering template within layouts/application
+Rendering authors/new
+Rendered authors/_form (2.9ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/authors/new]
+
+
+Processing AuthorsController#create (for 127.0.0.1 at 2009-04-07 15:35:58) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"4XAOBuLifWvZD0g2jaxyRpVw2lTrBnajx/7ZoVbweS8=", "author"=>{"first_name"=>"", "last_name"=>""}}
+Rendering template within layouts/application
+Rendering authors/new
+Rendered authors/_form (1.7ms)
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2009-04-07 15:36:01) [GET]
+  [4;35;1mAuthor Load (0.6ms)[0m   [0mSELECT * FROM "authors" [0m
+Rendering template within layouts/application
+Rendering authors/index
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/authors]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2009-04-07 15:36:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering authors/edit
+Rendered authors/_form (4.5ms)
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/authors/2/edit]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2009-04-07 15:36:05) [GET]
+  [4;35;1mAuthor Load (1.1ms)[0m   [0mSELECT * FROM "authors" [0m
+Rendering template within layouts/application
+Rendering authors/index
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/authors]
