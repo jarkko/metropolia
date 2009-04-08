@@ -29,11 +29,7 @@ class BooksController < ApplicationController
     @book = Book.new(params[:book])
     
     respond_to do |format|
-      format.js do
-        @book.save
-        @books = Book.all
-        render :partial => @books
-      end
+      format.js
       format.html do
         if @book.save
           flash[:notice] = "Book created successfully"

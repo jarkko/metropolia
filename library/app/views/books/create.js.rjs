@@ -1,0 +1,6 @@
+if @book.save  
+  page.insert_html :bottom, 'book_list', :partial => "book", :object => @book
+  page["book_#{@book.id}"].visual_effect :highlight, :duration => 5
+  page[:new_book].reset # $('new_book').reset()
+  page[:book_form].hide
+end
