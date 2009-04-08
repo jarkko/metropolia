@@ -2,7 +2,7 @@
   <% @authors.each do |author| %>
   <li>
     <%= author.name %>
-    <% form_remote_tag(:url => book_authorships_path(@book), :update => "author_list") do %>
+    <% form_remote_tag(:url => book_authorships_path(@book), :update => "author_list", :complete => "console.log('this is ' + this); $('new_author_form').hide()") do %>
       <%= hidden_field_tag "author_id", author.id %>
       <%= submit_tag "Add author" %>
     <% end %>

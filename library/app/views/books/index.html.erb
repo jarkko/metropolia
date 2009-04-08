@@ -1,5 +1,9 @@
-<ul>  
+<ul id="book_list">  
   <%= render :partial => @books %>
 </ul>
 
-<%= link_to "Add new book", new_book_path %>
+<%= link_to_function "Add new book", "$('book_form').toggle()" %>
+
+<div id="book_form" style="display:none">
+  <%= render :partial => "form", :locals => {:submit_text => "Create"} %>
+</div>

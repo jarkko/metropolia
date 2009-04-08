@@ -1,3 +1,4 @@
 <li>
-  <%= link_to book.title, book %>    
+  <%= link_to book.title, book %> 
+  <%= link_to_remote "X", :url => book_path(book), :method => "delete", :update => "book_list" %>
 </li>

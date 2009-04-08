@@ -1,11 +1,11 @@
 class BooksController < ApplicationController    
   before_filter :fetch_book, 
-    :only => [:show, :edit, :update]
+    :only => [:show, :edit, :update, :destroy]
 
   def index
     @page_title = "Books >> Index"
     @books = Book.all
-    
+    @book = Book.new
     respond_to do |format|
       format.html
       format.xml { render :xml => @books.to_xml }
@@ -28,12 +28,21 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(params[:book])
     
-    if @book.save
-      flash[:notice] = "Book created successfully"
-      redirect_to books_path
-    else
-      flash.now[:notice] = "Oops, didn't work"
-      render :action => "new"
+    respond_to do |format|
+      format.js do
+        @book.save
+        @books = Book.all
+        render :partial => @books
+      end
+      format.html do
+        if @book.save
+          flash[:notice] = "Book created successfully"
+          redirect_to books_path
+        else
+          flash.now[:notice] = "Oops, didn't work"
+          render :action => "new"
+        end
+      end
     end
   end
   
@@ -47,6 +56,16 @@ class BooksController < ApplicationController
       redirect_to book_path(@book)
     else
       render :action => "edit"
+    end
+  end
+  
+  def destroy
+    @book.destroy
+    respond_to do |format|
+      format.js do
+        @books = Book.all
+        render :partial => @books
+      end
     end
   end
   
