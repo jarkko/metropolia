@@ -8,13 +8,21 @@ class AuthorshipsController < ApplicationController
   def create
     @author = Author.find(params[:author_id])
     @book.authors << @author
-    flash[:notice] = "Successfully added #{@author.name} to the book's authors"
-    redirect_to book_path(@book)
+    
+    respond_to do |format|
+      format.js do
+        render :partial => "books/author", :collection => @book.authors
+      end
+      format.html do
+        flash[:notice] = "Successfully added #{@author.name} to the book's authors"
+        redirect_to book_path(@book)
+      end
+    end
   end
   
   def destroy
     @author = @book.authors.find(params[:id])
-    @book.authors.destroy(@author)
+    @book.authors.delete(@author)
     redirect_to book_path(@book)
   end
   

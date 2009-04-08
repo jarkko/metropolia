@@ -11,19 +11,18 @@
   <dt>
     Authors
   </dt>
-    <% @book.authors.each do |author| %>
-    <dd>
-      <%= author.name %>
-      
-      <% form_tag(book_authorship_path(:book_id => @book, :id => author), {:method => "delete"}) do |f| %>
-        <%= submit_tag "Delete" %>
-      <% end %>
-    </dd>
-    
-    <% end %>
+
+  <dd id="author_list">
+    <%= render :partial => "author", :collection => @book.authors %>
+  </dd>
+
 </dl>
 
 <p>
   <%= link_to "Edit", edit_book_path(@book) %> |
-  <%= link_to "Add author", new_book_authorship_path(@book) %>
+  <%= link_to_function "Add author", "$('new_author_form').toggle()" %>
 </p>
+
+<div id="new_author_form" style="display:none">
+  <%= render :partial => "authorships/list" %>
+</div>

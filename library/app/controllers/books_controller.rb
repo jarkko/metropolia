@@ -13,6 +13,8 @@ class BooksController < ApplicationController
   end
   
   def show
+    @authors = Author.all - @book.authors
+    
     respond_to do |format|
       format.html
       format.xml { render :xml => @book.to_xml }

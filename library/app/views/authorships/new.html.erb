@@ -1,13 +1,3 @@
 <h1>Add author to <%= @book.title %></h1>
 
-<ul>
-  <% @authors.each do |author| %>
-  <li>
-    <%= author.name %>
-    <% form_tag(book_authorships_path(@book)) do %>
-      <%= hidden_field_tag "author_id", author.id %>
-      <%= submit_tag "Add author" %>
-    <% end %>
-  </li>
-  <% end %>  
-</ul>
+<%= render :partial => "list" %>

@@ -1,0 +1,11 @@
+<ul>
+  <% @authors.each do |author| %>
+  <li>
+    <%= author.name %>
+    <% form_remote_tag(:url => book_authorships_path(@book), :update => "author_list") do %>
+      <%= hidden_field_tag "author_id", author.id %>
+      <%= submit_tag "Add author" %>
+    <% end %>
+  </li>
+  <% end %>  
+</ul>
