@@ -1,0 +1,4 @@
+if @book.frozen?
+  dom_id = "book_#{@book.id}"
+  page.visual_effect :fade, dom_id
+end

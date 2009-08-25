@@ -1,8 +1,12 @@
+<% content_for(:javascript) do %>
+<%= javascript_include_tag 'books/index' %>
+<% end %>
+
 <ul id="book_list">  
   <%= render :partial => @books %>
 </ul>
 
-<%= link_to_function "Add new book", "$('book_form').toggle()" %>
+<%= link_to "Add new book", new_book_path, :id => "new_book_link" %>
 
 <div id="book_form" style="display:none">
   <%= render :partial => "form", :locals => {:submit_text => "Create"} %>

@@ -1,4 +1,4 @@
 <li id="book_<%= book.id %>">
   <%= link_to book.title, book %> 
-  <%= link_to_remote "X", :url => book_path(book), :method => "delete", :update => "book_list" %>
+  <%= link_to "X", book_path(book), :class => "delete_book" %>
 </li>

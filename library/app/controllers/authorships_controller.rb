@@ -10,9 +10,7 @@ class AuthorshipsController < ApplicationController
     @book.authors << @author
     
     respond_to do |format|
-      format.js do
-        render :partial => "books/author", :collection => @book.authors
-      end
+      format.js
       format.html do
         flash[:notice] = "Successfully added #{@author.name} to the book's authors"
         redirect_to book_path(@book)

@@ -1,6 +1,6 @@
 <%= error_messages_for :book %>
 
-<% remote_form_for(@book) do |f| %>
+<% form_for(@book) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   

@@ -1,4 +1,4 @@
-<div>
+<div id="book_author_<%= author.id %>">
   <%= author.name %>
   
   <% form_tag(book_authorship_path(:book_id => @book, :id => author), {:method => "delete"}) do |f| %>

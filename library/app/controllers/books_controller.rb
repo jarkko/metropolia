@@ -2,6 +2,8 @@ class BooksController < ApplicationController
   before_filter :fetch_book, 
     :only => [:show, :edit, :update, :destroy]
 
+  skip_before_filter :verify_authenticity_token, :only => [:destroy]
+
   def index
     @page_title = "Books >> Index"
     @books = Book.all
@@ -58,10 +60,7 @@ class BooksController < ApplicationController
   def destroy
     @book.destroy
     respond_to do |format|
-      format.js do
-        @books = Book.all
-        render :partial => @books
-      end
+      format.js
     end
   end
   

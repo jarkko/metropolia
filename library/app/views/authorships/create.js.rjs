@@ -1,0 +1,4 @@
+page.insert_html :bottom, :author_list, :partial => "books/author", :object => @author
+page.remove "author_#{@author.id}"
+page[:new_author_form].hide
+page["book_author_#{@author.id}"].visual_effect :highlight, :duration => 5
